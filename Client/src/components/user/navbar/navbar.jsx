@@ -79,7 +79,9 @@ const ProfessionalNavbar = () => {
           // const response = await fetch(
           //   `https://ecommerse-assingment-backend.onrender.com/auth/user/${userId}`
           // );
-          const response = await fetch(`  http://localhost:3000/${userId}`);
+          const response = await fetch(
+            `https://ecommerce-server-fz65.onrender.com/${userId}`
+          );
           const data = await response.json();
           setUserName(data.name);
         } catch (error) {

@@ -58,7 +58,7 @@ const CartItems = () => {
             //   `https://ecommerse-assingment-backend.onrender.com/product/${item.productId}`
             // );
             const productResponse = await fetch(
-              ` http://localhost:3000/${item.productId}`
+              `https://ecommerce-server-fz65.onrender.com/${item.productId}`
             );
             const productData = await productResponse.json();
 
@@ -95,17 +95,20 @@ const CartItems = () => {
         // const response = await fetch(
         //   "https://ecommerse-assingment-backend.onrender.com/update-quantity",
         //   {
-        const response = await fetch(" http://localhost:3000", {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId,
-            productId: itemId,
-            productQty: newQuantity,
-          }),
-        });
+        const response = await fetch(
+          "https://ecommerce-server-fz65.onrender.com/update-quantity",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              userId,
+              productId: itemId,
+              productQty: newQuantity,
+            }),
+          }
+        );
 
         const data = await response.json();
         if (data.success) {
@@ -129,16 +132,19 @@ const CartItems = () => {
       // const response = await fetch(
       //   "https://ecommerse-assingment-backend.onrender.com/delete-items",
       //   {
-      const response = await fetch(" http://localhost:3000", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId,
-          productId: itemId,
-        }),
-      });
+      const response = await fetch(
+        "hhttps://ecommerce-server-fz65.onrender.com/delete-items",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            productId: itemId,
+          }),
+        }
+      );
 
       const data = await response.json();
       if (data.success) {

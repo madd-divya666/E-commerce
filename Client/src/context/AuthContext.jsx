@@ -5,13 +5,13 @@ import axios from "axios"; // Import axios directly
 const AuthContext = createContext();
 
 const API = process.env.REACT_APP_BACKEND_URL;
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   // Axios instance with default configurations
   const api = axios.create({
-    // baseURL: 'https://ecommerse-assingment-backend.onrender.com', // Backend URL
-    baseURL: API, // Backend URL
+    baseURL: API || "https://ecommerce-server-fz65.onrender.com", // Backend URL
     withCredentials: true, // Include cookies in requests
   });
 

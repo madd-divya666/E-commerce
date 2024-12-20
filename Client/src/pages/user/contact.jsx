@@ -26,16 +26,19 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       //const response = await fetch('https://ecommerse-assingment-backend.onrender.com/post-complaints', {
-      const response = await fetch("http://localhost:3000/post-complaints", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          userType: "unregistered",
-        }),
-      });
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/post-complaints",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            userType: "unregistered",
+          }),
+        }
+      );
 
       const data = await response.json();
 

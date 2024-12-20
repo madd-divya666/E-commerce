@@ -24,7 +24,9 @@ const Product = () => {
   const fetchProducts = async () => {
     try {
       // const response = await fetch('https://ecommerse-assingment-backend.onrender.com/get-product');
-      const response = await fetch(" http://localhost:3000/get-product");
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/get-product"
+      );
       const data = await response.json();
       setProducts(data.products); // Access the products array from response
     } catch (error) {
@@ -45,17 +47,20 @@ const Product = () => {
       // const response = await fetch(
       //   "https://ecommerse-assingment-backend.onrender.com/instock-update",
       //   {
-      const response = await fetch("http://localhost:3000/instock-update", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          productId,
-          inStockValue: editValues.inStockValue || 0,
-          soldStockValue: editValues.soldStockValue || 0,
-        }),
-      });
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/instock-update",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            productId,
+            inStockValue: editValues.inStockValue || 0,
+            soldStockValue: editValues.soldStockValue || 0,
+          }),
+        }
+      );
 
       if (response.ok) {
         setEditingId(null);

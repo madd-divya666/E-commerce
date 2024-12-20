@@ -1,3 +1,4 @@
+require("dotenv").config();
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -73,10 +74,12 @@ const Sidebar = () => {
     setProductData({ ...productData, [name]: value });
   };
 
+  const API = process.env.REACT_APP_BACKEND_URL;
+
   const handleSubmit = async () => {
     try {
       // const response = await fetch('https://ecommerse-assingment-backend.onrender.com/create-product', {
-      const response = await fetch("http://localhost:3000/create-product", {
+      const response = await fetch(`${API}/create-product`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

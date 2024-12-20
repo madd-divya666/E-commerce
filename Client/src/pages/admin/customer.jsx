@@ -18,7 +18,9 @@ const Customers = () => {
   const fetchCustomers = async () => {
     try {
       // const response = await fetch('https://ecommerse-assingment-backend.onrender.com/get-user');
-      const response = await fetch("http://localhost:3000/get-user");
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/get-user"
+      );
       const data = await response.json();
       if (data.success) {
         // Map the user data and set default values if fields are missing
@@ -49,7 +51,7 @@ const Customers = () => {
       //   "https://ecommerse-assingment-backend.onrender.com/update-account-status",
       //   {
       const response = await fetch(
-        "http://localhost:3000/update-account-status",
+        "https://ecommerce-server-fz65.onrender.com/update-account-status",
         {
           method: "PUT",
           headers: {

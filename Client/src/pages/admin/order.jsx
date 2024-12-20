@@ -106,7 +106,9 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       // const response = await fetch('https://ecommerse-assingment-backend.onrender.com/get-orders');
-      const response = await fetch(" http://localhost:3000/get-orders");
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/get-orders"
+      );
       const data = await response.json();
       const ordersWithStatus = data.orders.map((order) => ({
         ...order,

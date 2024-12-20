@@ -30,7 +30,7 @@ const CartItems = () => {
       try {
         // const cartResponse = await fetch(`https://ecommerse-assingment-backend.onrender.com/cart/${userId}`);
         const cartResponse = await fetch(
-          ` http://localhost:3000/cart/${userId}`
+          `https://ecommerce-server-fz65.onrender.com/cart/${userId}`
         );
         const cartData = await cartResponse.json();
 

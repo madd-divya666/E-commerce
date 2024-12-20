@@ -39,7 +39,9 @@ const Shop = ({ category }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/get-product");
+        const response = await fetch(
+          "https://ecommerce-server-fz65.onrender.com/get-product"
+        );
         const data = await response.json();
         console.log(data.products);
         if (data.success) {

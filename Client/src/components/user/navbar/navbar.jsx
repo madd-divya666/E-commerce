@@ -35,7 +35,9 @@ const ProfessionalNavbar = () => {
       const userId = sessionStorage.getItem("userId");
       if (!userId) return;
       // const cartResponse = await fetch(`https://ecommerse-assingment-backend.onrender.com/cart/${userId}`);
-      const cartResponse = await fetch(`http://localhost:3000/cart/${userId}`);
+      const cartResponse = await fetch(
+        `https://ecommerce-server-fz65.onrender.com/cart/${userId}`
+      );
       const cartData = await cartResponse.json();
       cartData.cart?.forEach((item) => {
         total = total + item.productQty;

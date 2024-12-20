@@ -34,7 +34,7 @@ const Complaints = () => {
     try {
       const response = await fetch(
         //"https://ecommerse-assingment-backend.onrender.com/get-complaints"
-        "https://localhost:3000/get-complaints"
+        "https://ecommerce-server-fz65.onrender.com/get-complaints"
       );
       const data = await response.json();
       setComplaints(data.complaints);
@@ -47,7 +47,7 @@ const Complaints = () => {
     try {
       // const response = await fetch('https://ecommerse-assingment-backend.onrender.com/update-complaint-status', {
       const response = await fetch(
-        " http://localhost:3000/update-complaint-status",
+        "https://ecommerce-server-fz65.onrender.com/update-complaint-status",
         {
           method: "PUT",
           headers: {

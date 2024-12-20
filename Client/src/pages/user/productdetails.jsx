@@ -32,7 +32,7 @@ const ProductDetail = () => {
       try {
         // const response = await fetch(`https://ecommerse-assingment-backend.onrender.com/product/${productId}`);
         const response = await fetch(
-          `http://localhost:3000/product/${productId}`
+          `https://ecommerce-server-fz65.onrender.com/product/${productId}`
         );
         const data = await response.json();
         if (data.success) {
@@ -89,17 +89,20 @@ const ProductDetail = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/add-to-cart", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId,
-          productId,
-          quantity,
-        }),
-      });
+      const response = await fetch(
+        "https://ecommerce-server-fz65.onrender.com/add-to-cart",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            productId,
+            quantity,
+          }),
+        }
+      );
 
       const data = await response.json();
 

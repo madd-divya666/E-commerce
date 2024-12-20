@@ -1,3 +1,4 @@
+require("dotenv").config();
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import {
@@ -9,6 +10,7 @@ import {
   XCircle,
 } from "lucide-react";
 
+const API = process.env.REACT_APP_BACKEND_URL;
 const Dashboard = () => {
   const [ordersData, setOrdersData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +21,7 @@ const Dashboard = () => {
     try {
       setIsLoading(true);
       //const response = await fetch("https://ecommerse-assingment-backend.onrender.com/get-orders");
-      const response = await fetch("http://localhost:3000/get-orders");
+      const response = await fetch(`${API}/get-orders`);
       if (!response.ok) {
         throw new Error("Failed to fetch orders");
       }
